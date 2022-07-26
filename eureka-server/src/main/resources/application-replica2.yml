@@ -1,0 +1,15 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: replica2
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+    prefer-ip-address: true #访问路径可以显示ip地址
+  client:
+    serviceUrl:
+      defaultZone: http://replica1:8002/eureka/ #注册到另一个Eureka注册中心
+    fetch-registry: true
+    register-with-eureka: true
