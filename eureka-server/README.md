@@ -1,3 +1,4 @@
+## Eureka的常用配置
 ```yaml
 eureka:
   client: #eureka客户端配置
@@ -16,5 +17,12 @@ eureka:
     prefer-ip-address: false #是否优先使用ip来作为主机名
   server: #eureka服务端配置
     enable-self-preservation: false #关闭eureka服务端的保护机制
+```
+## 使用到的模块
+```xml
+springcloud-learning
+├── eureka-server -- eureka注册中心
+├── eureka-security-server -- 带登录认证的eureka注册中心
+└── eureka-client -- eureka客户端
 ```
 
