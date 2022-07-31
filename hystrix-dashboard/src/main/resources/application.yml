@@ -1,0 +1,14 @@
+server:
+  port: 8501
+spring:
+  application:
+    name: hystrix-dashboard
+eureka:
+  instance:
+    hostname: localhost #指定主机地址
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
